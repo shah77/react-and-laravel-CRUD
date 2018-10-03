@@ -40,7 +40,6 @@ export default class NewItem extends Component {
           isDisabled: modifiers.disabled === true,
         });
         console.log("start date:", taskStartDate.toLocaleString("en-us"))
-        
     }
 
     handleDayChange2(taskDate, modifiers, dayPickerInput) {
@@ -98,7 +97,6 @@ export default class NewItem extends Component {
         this.setState({alertMsg:"success"})
         setTimeout(() => {
             this.setState({alertMsg:""})
-           // this.props.history.push('/');
         }, 2000);
     }
 
@@ -106,7 +104,6 @@ export default class NewItem extends Component {
         this.setState({alertMsg:"error"});
         setTimeout(() => {
             this.setState({alertMsg:""})
-           // this.props.history.push('/');
         }, 2000);
     }
 

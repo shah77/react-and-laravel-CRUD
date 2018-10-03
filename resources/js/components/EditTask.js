@@ -1,11 +1,10 @@
 import React, {Component} from 'react';
-import { BrowserRouter as Router, Route, Link, Redirect } from 'react-router-dom';
-import { Button, Checkbox, Form, Header, Modal, Image, Container } from 'semantic-ui-react'
 import axios from 'axios';
-import SuccessMsg from './SuccessMsg';
 import ErrorMsg from './ErrorMsg';
-import DayPickerInput from 'react-day-picker/DayPickerInput';
+import SuccessMsg from './SuccessMsg';
 import 'react-day-picker/lib/style.css';
+import { Button, Form, Container } from 'semantic-ui-react';
+import DayPickerInput from 'react-day-picker/DayPickerInput';
 
 export default class EditTask extends Component {
 
@@ -69,6 +68,7 @@ export default class EditTask extends Component {
 
     onSubmit(e){
         e.preventDefault();
+        
         if(this.state.taskStartDate > this.state.taskDate){
             this.setState({errorMsg:"Start date must be earlier than end date!"});
             this.errorResult();
@@ -99,7 +99,6 @@ export default class EditTask extends Component {
         this.setState({alertMsg:"success"})
         setTimeout(() => {
             this.setState({alertMsg:""})
-           // this.props.history.push('/');
         }, 2000);
     }
 
@@ -107,7 +106,6 @@ export default class EditTask extends Component {
         this.setState({alertMsg:"error"});
         setTimeout(() => {
             this.setState({alertMsg:""})
-           // this.props.history.push('/');
         }, 2000);
     }
 
